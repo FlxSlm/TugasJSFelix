@@ -12,9 +12,4 @@ document.querySelectorAll('.toggle-content').forEach(btn => {
   });
 });
 
-// Form Contact
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  document.getElementById('response').textContent = 'Terima kasih, pesan Anda telah terkirim!';
-  this.reset();
-});
+
