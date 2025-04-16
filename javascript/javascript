@@ -1,20 +1,20 @@
-// Fungsi untuk menampilkan isi artikel saat tombol "Baca Selengkapnya" ditekan
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".read-more");
-
-  buttons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      const content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-        this.textContent = "Baca Selengkapnya";
-      } else {
-        content.style.display = "block";
-        this.textContent = "Tutup";
-      }
-    });
+// Toggle "Baca Selengkapnya" di Blog
+document.querySelectorAll('.toggle-content').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const more = btn.parentElement.nextElementSibling;
+    if (more.style.display === 'none') {
+      more.style.display = 'block';
+      btn.textContent = 'Sembunyikan';
+    } else {
+      more.style.display = 'none';
+      btn.textContent = 'Baca Selengkapnya';
+    }
   });
 });
 
-
-
+// Form Contact
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('response').textContent = 'Terima kasih, pesan Anda telah terkirim!';
+  this.reset();
+});
